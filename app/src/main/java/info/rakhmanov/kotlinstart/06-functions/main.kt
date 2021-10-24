@@ -56,4 +56,34 @@ fun main() {
     }
 
     // FUNCTIONS AS VARIABLES
+    fun add(a: Int, b: Int): Int {
+        return a + b
+    }
+
+    var function = ::add
+    function(4, 2)
+
+    fun substruct(a: Int, b: Int) : Int {
+        return a - b
+    }
+
+    function = ::substruct
+    function(4, 2)
+
+    fun printResult(function: (Int, Int) -> Int, a: Int, b: Int) {
+        val result = function(a, b)
+        print(result)
+    }
+    printResult(::add, 6, 2)
+
+    // LAND OF NO RETURN
+    //fun noReturn() : Nothing {
+    //
+    //}
+
+    fun infiniteLoop(): Nothing {
+        while (true) {
+            
+        }
+    }
 }
